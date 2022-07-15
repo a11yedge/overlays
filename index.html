@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Overlay Applications in Web Accessibility</title>
+		<script src="https://www.w3.org/Tools/respec/respec-w3c" class="remove"></script>
+		<script src="respec-config.js" class="remove"></script>
+	</head>
+	<body>
+	<section id="abstract">
+	<h2>Abstract</h2>
+
+<p>Lately various web based accessibility enhancement, remediation, and reporting services have been made available to web content providers under the term: <q>Overlay.</q> 
+These function by adding a snippet of JavaScript into a web content provider&apos;s page. Typically, this single line of additional code functions to enable additional content processing on each page load delivered through the overlay provider&apos;s servers,  before the content is delivered to the end user. While this routing paradigm is by no means unique to accessibility applications, it does introduce accessibility opportunities and challenges.</p>
+
+<p>In this document we explore overlay technologies applied for accessibility purposes. This document is intended to consider:</p>
+<ul>
+	<li>
+    What is meant by the term <q>overlay,</q>
+	</li>
+	<li>
+	Overlays as a specific type of edge technology,
+	</li>
+	<li>
+	Specific examples where overlays enhance accessibility,
+	</li>
+	<li>
+	Specific antipatterns where overlays interfere with accessibility,
+	</li>
+  <li>What additional edge services might be developed or leveraged to enhance accessibility.
+  </li>
+</ul>
+	</section>
+
+  <section id="sotd"></section>
+
+	<section id="introduction">
+			<h2>Introduction</h2>
+
+<p>Web technologies support an increasingly wide variety of online services. The
+typical web page payload built with HTML, CSS, and JavaScript is
+often accessed by many different inter-process communications. Internal
+representations such as a DOM tree and an Accessibility tree are two
+primary and widely familiar examples of payload processing, but there are many others.</p>
+<p>While perhaps best known for introducing content transformation, overlays also include the capability to apply artificial intelligence to the inspection and reporting on web content delivered to users which today is typically a composite sourced from multiple vendors, i.e. <q><a href="https://www.merriam-webster.com/dictionary/mash-up">mashups.</a></q></p>
+<ul>
+  <li>When used to transform content overlays have been found to be helpful at times, and harmful at other times, depending on specific circumstances. We examine these in this document.</li>
+  <li>When used in a data collecting and reporting function, however, overlays may provide a view of what the end user actually receives that is simply unattainable through traditional accessibility auditing approaches. We will also discuss this application of overlays in this exploratory document.</li></ul>
+
+<p>This W3C Community Group document endeavors to inventory the various features, functions and capabilities of overlays. In doing so we introduce a new term to the typical paradigm of accessibility evaluation, <q><a>edge computing</a>.</q> To date edge computing has not been addressed by W3C accessibility related publications. </p>
+
+		<section id="etymology">
+			<h3>Etymological Note</h3>
+      <p>The term <q>Overlay</q> itself, when applied to web technologies, has a history in W3C accessibility work, especially after 2009 (when <abbr title="Web Accessibility Initiative">WAI</abbr> took on the task of helping develop accessibility support in HTML 5). The term may have seemed appropriate to name an approach that mirrored in web content the older practice where some hardware manufacturers provided (and still provide) transparent plastic sheets called <q>braille overlays</q> for touchpad controls, such as are typically found on microwave ovens. These braille overlays consist of transparent plastic with a sticky backside and appropriately located braille characters on their face. With the protective covering from the sticky backside removed, these braille overlays can be affixed onto the touchpad thus affording blind users reliable access to operating touchpad controls while not hampering visibility for sighted users. Similarly, the term was used in discussions of HTML 5 media and canvas accessibility. It is also sometimes used to describe the process of overlaying WAI-ARIA markup to add semantic information to existing content which otherwise lacks sufficient semantic clarity.</p>
+
+      <div class="ednote"><strong>EDITOR&apos;S NOTE</strong><br />
+      <p>Is there a better title for this section? Should we also note early use of the term in user interface design e.g., Microsoft Windows 3.0?</p>
+      </div>
+
+<p>Overlays operate at the client side or presentation layer,
+effectively the “edge” of the web information flow, the final stage of
+the content collection and aggregation process  that defines what is actually presented to end users.</p>
+
+<p>
+As the Internet has grown, its users have come to expect speedy interaction and
+persistent connectivity&mdash;whether at home, or roaming in one&apos;s geographic locale, or even on
+international flights.  The IT industry has happily promoted this expectation
+of persistent real-time access to data with actions such as removing memory card support
+from smart phones, among other initiatives encouraging dependence on cloud data
+storage. In turn this trend
+has made edge computing a core component of virtually every organization&apos;s IT
+strategy.
+While it is true that  edge computing can enhance operational
+efficiency and automation, the need to maintain low latency for content load on user&apos;s devices heightens the demands
+for greater dependence on edge computing infrastructure. In this document we explore overlays as one approach to leveraging edge infrastructure for accessibility.
+</p> 
+		</section>
+
+<section id="w3c-edge">
+	<h3>W3C Technologies on the Edge</h3>
+
+  <div class="ednote"><strong>EDITOR&apos;S NOTE</strong><br /><p>
+    Section content yet to be written&mdash;and appropriately located in this document. Include</p>
+
+    <ul>
+      <li>the <a href="https://www.w3.org/WAI/APA/task-forces/research-questions/wiki/Main_Page#Reporting_API">Accessibility Use Cases relating to the Web Performance WG Reporting specification</a> being developed by the Accessible Platform Architecture (APA)&apos;/
+        s Research Questions Task Force (RQTF).</li>
+      
+      <li>Various federated initiatives  promissing to remove passwords from web interactions based on <a href="https://www.w3.org/TR/webauthn-2/">W3C WebAuthN API</a> and described in press articles such as this <a href="https://techcrunch.com/2022/06/06/apple-passkeys-look-to-kill-off-the-password-for-good/">TechCrunch article</a>  and this <a href="https://appleinsider.com/articles/22/06/07/apple-passkey-feature-will-be-our-first-taste-of-a-truly-password-less-future">Apple Insider article.</a> Note that we expect these developments will also help to kill-off CAPTCHA.</li>
+      <li>The journal article by Boris Katz,
+  Andrei Barbu, and Dalitso Banda describing research on 
+  <a href="https://groups.csail.mit.edu/infolab/publications/Barbu-Deep-video-to-video-transformations.pdf">flash mitigation technology</a>.</li>
+    </ul>
+  </div>
+  </section>
+  </section>
+
+  <section id="overlay-definition">
+    <h2>Defining Overlays</h2>
+<p>The word “overlay” has recently acquired a particular meaning, especially (and perhaps exclusively) around accessibility on the web. While formally undefined anywhere, the term has gained currency because it draws specificity by analogy to very common practices over many generations of technology, though these have gone by other names at different times and in various contexts. A partial list of examples might include:</p>
+<ul>
+<li>
+<a href="https://www.searchenginejournal.com/">
+	Timed and cursor movement-based popup ads</a></li>
+<li>
+<a href="https://www.smashingmagazine.com/">
+  <abbr title="General Data Protection Regulation">GDPR</abbr> opt-in boxes</a>
+</li>
+<li>
+<a href="https://www.intercom.com/">
+	Chat bots</a>
+</li>
+<li>
+<a href="https://sharethis.com/">
+	Social sharing icons</a>
+</li>
+<li>
+<a href="https://www.twitch.tv/">
+	Footer ads</a>
+</li>
+</ul>
+
+<section id="how-it-works">
+<h3>How Overlays Function</h3>
+
+<p>Overlays are created with a JavaScript function within the
+code of a website. Any website author can add an overlay to their site,
+and third-party services strive to make it as simple as possible, such as
+this one from <a
+href="https://mailchimp.com/help/add-a-pop-up-signup-form-to-your-website/"><u>MailChimp</u></a>.</p>
+<p>An accessibility overlay that is intended to be visible to end users typically appears to the as a button in the corner of their browser window. The button remains in a static position as the user scrolls through the page. When it is activated, a user-interface appears with customization options that frequently include ways to change text size, text spacing and color contrast settings.</p>
+<p>The extent of the user-side customizations available from an overlay
+will vary by vendor.
+Many accessibility overlays also perform automated functions whose complexity and actual benefit can vary widely,.
+It should not be surprising that poorly designed overlays can introduce more accessibility challenges for the end user than not having the overlay at all..</p>
+
+</section>
+
+    <section id="customers">
+      <h3>The Overlay Customer</h3>
+
+<p>It is also useful to acknowledge the customer-base for
+overlays. While even sizable corporations may have limited ability to employ accessibility expertise in their content development processes, frequently, the subscriber is a small business owner
+with a website created by an employee with no particular content development skills by using a <q>fill out the form</q> approach to content development&mdash;on a platform like WordPress, Wix, Shopify, or
+one of their many competitors. Small businesses choose these platforms
+because of their simplicity and low prices. Too often accessibility considerations aren&apos;/
+t front of mind for these businesses. Too often the platform providers do too little to help support accessibility; and, when they do support accessibility, obtaining an accessible outcome is too often a question of choosing the right set of templates.
+</p>
+    </section>
+    </section>
+
+<section id="sourcing-content">
+	<h2>Whose Content Is It?</h2>
+
+  <p>In the main the classic paradigm of a web domain owner serving content directly to end users across the Internet has long ago become a historical artifact.
+  Today&apos;s typical web page is often a dizzying composite of multiple content streams injected from various sources, including content unique to the user&apos;s locale and even to the specific user herself. Content delivered to a user today may be a unique <q>one-off</q> composite that will change if the page is refresheda According to the <a href="https://almanac.httparchive.org/en/2021/third-parties">2021 Web Almanac</a> notes more than 20 third party injection streams for today&apos;s typical web site, with 10% containing over 90 separate content injections.</p>
+
+  <div class="ednote"><strong>EDITOR&apos;S NOTE</strong><br /><p>
+    We need a good graphic here.</p></div>
+
+<p>The source of the typical website
+today is actually many sources. 
+
+<p>Even third-party plugins aren&apos;t always created by a single
+source. Few developers exclusively use their own code. They rely on
+libraries, components and frameworks to build their plugins.
+Edge technologies may actually be best placed to help overcome the problem
+of substandard accessibility in composite content delivered to end users by identifying precisely the accessibility challenges that end users may experience and helping remediate them where it matters most&mdash;at the user
+level, for the simple reason that technology based tracking and reporting can examine far more end user payload deliveries than human testing will ever cover. Whether the resulting remediation is an inprocess transformation, or an upstream recoding, gathering and reporting many samples to upstream end points is arguably the most efficient way to spot anomalous patterns (and a great application for <a>A-I</a> analysis).</p>
+
+<section id="problems-solved-by-overlays">
+<h3>Problems Solved By Overlays</h3>
+<p>Ensuring accessibility of websites and applications will ever remain a
+challenge. While everyone agrees that
+accessibility is best baked-in at the beginning of the digital content
+life-cycle, achieving accessible  results will ever remain a work in progress simply because the ever more dynamic web will itself continue to be a work in progress.</p>
+
+  <div class="ednote"><strong>EDITOR&apos;S NOTE</strong><br />
+    <p>This section needs more work.</p></div>
+
+    <p>With the proviso that we are assuming well crafted approaches, some useful applications of overlays include:</p>
+
+  <ul>
+    <li>
+      Fixing legacy rendering. There are multiple reasons why a content provider may hesitate to apply fixes in source content&mdash;perhaps out of an abundance of caution to avoid unanticipated consequences from doing so.
+    </li>
+
+    <li>
+      Support for an aging population. Many older citizens, often uncomfortable
+      with technology in general, will not identify as persons with
+      disabilities. Generally, they will not be users of assistive
+      technologies. They may, however, be grateful for easily engaged
+      colorization and contrast correctives, or a rerendering of content in
+      more perceivable fonts.  In the US, people aged 65 and older totaled 54.1
+      million in 2019 (or 16% of the population). By 2040, this age group is
+      expected to grow to 21.6% of the population. This is a significant user
+      base which should not be overlooked.
+    </li>
+
+    <li>
+      Color and contrast, together with more perceivable font options, can be of benefit across all age groups. While there is a clear risk here of duplicating operating environment (or assistive technology) options, it may prove more fruitful to consider a complimentary approach rather than rendering judgement on which mechanism users should be required to know and use. One possibly invaluable future development between edge technology and system settings might be a privacy preserving secure mechanism to build user preference profiles that can be shared across all of a given user&apos;s devices. The <q>both and</q> opportunity here may well make the sum of the parts far more valuable than the traditional approach requiring independent settings on each individual device. we may do well to recall that <q>Back</q> buttons did not appear in web content because the user agents of that day lacked menu-driven mechanisms (or keyboard shortcuts) enabling the same feature.
+    </li>
+
+		<li>
+			Website content authors may also benefit of accessibility overlays. Many website creators have little or noo development budget or digital accessibility experience, particularly small business owners. This group may sometimes rely on an accessibility overlay technology more than many  accessibility professionals would prefer, but an overlay may be the only technology helping them in their specific situations.
+		</li>
+
+		<li>
+		  End users can be enabled by overlays to help fix challenges on particular pages, e.g. by proposing better alternative text, or otherwise commenting on barriers they&apos;ve encountered on a particular page view.
+		</li>
+
+		<li>
+		  When the accessibility challenge is found to be linked to poor code in some open source library or application, a fix pushed and accepted to that code will likely remediate not only the challenge that triggered the report, but also all other sites using that library or helper application.
+		</li>
+  </ul>
+</section>
+
+<section id="antipatterns">
+	<h3>Overlay Antipatterns</h3>
+	<p class="ednote"><strong>EDITOR&apos;S NOTE</strong><br />This section needs more work.</p>
+
+	<p>It is to be noted that poorly designed overlays can actually work to impede accessibility. Some common antipatterns found in overlays include:</p>
+
+	<ul>
+		<li>the overlay might make frequent screen reader announcements regarding its functionality, announcements that would not be needed if there was no overlay present at all.</li>
+
+		<li>Sometimes  an overlay may activate certain features only when a screen reader is detected, causing the user to conclude that their disability, having been detected, will now also likely be recorded without their permission (a violation of basic privacy).</li>
+
+		<li>A non-mouse or pointer user who routes on keyboard navigation may find the overlay received focus in unexpected ways, breaking focus order.</li>
+
+		<li>Sometimes, most if not all of the CSS-modification features are available elsewhere on the host system (e.g. in the assistive technology, the browser (or other user agent), or in the host operating system itself). Offering capabilities redundantly on the page can tend to clutter up the page for no real reason while making their application a repetitive task as the user browses from one page to another, rather than a global configuration choice.</li>
+
+		<li>Even overlay proponents who agree that CSS-alteration features (like dark mode) are desirable, providing value to people living with low vision, would tend to agree that the lack of standardization among various overlays may make this feature less usable because it&apos;s too often hard to locate.</li>
+	</ul>
+
+  <div class="ednote"><strong>EDITOR&apos;S NOTE</strong><br /><p>
+    Explore a standardized, secure (and privacy preserving) cross browser and cross platform mechanism to iteratively enable users to build their own personal preference profiles. Consider how such profiles might be securely shared across a user&apos;s multiple devices.</p></div>
+
+</section>
+
+<section>
+	<h2>Expanding the Approach</h2>
+
+  <div class="ednote"><strong>EDITOR&apos;S NOTE</strong><br />
+    <p>This section needs more work. In particular we should seek to harmonize with the <a href="https://w3c.github.io/maturity-model/index.html">emerging Maturity Model (W3C Working Group Note track document)</a> now in development in the W3C Accessible Platform Architectures (APA) Research Questions Task Force (RQTF).</p></div>
+
+  <p>It has previously been noted that edge computing hasn&apos;s figured in the web content accessibility paradigm, though many remediation providers are increasingly testing with end users at the content delivery point rather than at the content server source. While testing with real users is clearly valuable, it can arguably be made even more valuable by supplementing with automated reporting. Meanwhile, identified problems may be remediable as noted above. Most important, however, is the careful consideration of how accessibility might leverage emerging industry application of W3CD authentication technologies to carry user content rendering settings across all user devices.</p>
+
+  <div class="ednote"><strong>EDITOR&apos;S NOTE</strong><br />
+    <p>Consider efficiency trade-offs. What efficiency is being discussed, efficient for whom or what, and maximizing the efficiency of available components. Examples:</p> 
+    <ol>
+    	<li>The operating system may have a similar setting, but too many users are lost trying to set it. How can we help tie the two together?</li>
+    	<li>Similarly, some apparently trivial fixes (i.e., a missing image alt text) aren&apos;t being performed at the source, and then are done in the overlay. This occurs in many small businesses, and even some sizeable businesses.</li>
+  	</ol>
+  </div>
+
+  <div class="ednote"><strong>EDITOR&apos;S NOTE</strong><br />
+    <p>Following flow needs further discussion and development</p>
+  </div>
+
+  <p>Though not all overlay solutions provider operate from the same paradigm, the following is offered as a high-level overview of content creation, updating, and delivery today along with some suggestions of additional ways overlays might function to benefit users.</p>
+
+<ol>
+<li>
+A site is developed inconformance to WCAG Success Criteria and then launched for use.
+</li>
+<li>
+Because today&apos;s web is dynamic, various content injections introduced before content is delivered to the end user may well to introduce accessibility challenges. Well crafted overlays (and perhaps other edge technologies)
+can help remediate many of the resulting challenges, and flag others for manual
+remediation.
+</li>
+<li>
+Content is added to the site after completion from time to time, some of which
+may introduce accessibility violations. Well crafted overlays (and perhaps other edge technologies)
+can help remediate many of the resulting challenges, and flag others for manual
+remediation.
+</li>
+<li>
+Meanwhile, the technologies used on the host site undergo further development, some of which may introduce
+accessibility challenges. A reporting overlay can be used to alert the site developers about
+them.
+</li>
+<li>
+As time passes, new accessibility standards are introduced, resulting in some code on
+the site no longer being conformant. The reporting overlay may be used to remediate some non-conformant
+code, and alert site developers.
+</li>
+</ol>
+
+<p>We emphasize that the use of overlays does not necessarily remove human expertise and oversight from a remediation process. But rather than perform
+the tedious and time-consuming task of identifying and remediating challenges 
+by hand, humans can use overlays to make the traditional remediation
+process more efficient and comprehensive. This is already current practice for some overlay solutions providers today.
+</p>
+</section>
+</section>
+
+<section class="appendix" id="advocacy"> 
+<h2>Advocacy Related Observations</h2>
+<p>This document exists to explore both appropriate and inappropriate application of overlay technology from a technological viewpoint. We do, however, acknowledge that overlays have become highly controversial among accessibility professionals. Therefore, for ethical considerations we refer readers to the <abbr title="International Association of Accessibility Professionals">IAAP</abbr> who have published <a href="https://www.accessibilityassociation.org/s/overlay-position-and-recommendations">a position paper regarding Overlays</a>.</p>
+</section>
+
+		<section class="appendix">
+			<h2>Terms</h2>
+			<p>The following terms are used in this document:</p>
+			<dl>
+				<dt><dfn>AI</dfn></dt>
+				<dd>Artificial Intelligence</dd>
+				<dt><dfn data-lt="assistive technology|assistive technologies">assistive technology</dfn></dt>
+				<dd>Hardware and / or software that acts as a stand-alone <a>user agent</a>, or alongside a mainstream user agent to meet the functional requirements of users with disabilities that go beyond those provided by mainstream user agents alone.</dd>
+				<dt><dfn>edge computing</dfn></dt>
+        <dd>Our use of this term mirrors the <a href="https://www.cloudflare.com/learning/serverless/glossary/what-is-edge-computing/">Cloud Flare definition</a> which says: <q>Edge computing is a networking philosophy focused on bringing computing as close to the source of data as possible in order to reduce latency and bandwidth use. In simpler terms, edge computing means running fewer processes in the cloud and moving those processes to local places, such as on a user&apos;s computer, an IoT device, or an edge server.</q></dd>
+<dt><dfn>General Data Protection Regulation</dfn></dt>
+				<dd>A regulation in E.U. law regarding data protection and privacy</dd>
+        <dt><dfn>machine learning</dfn></dt>
+				<dd>Synonym for artificial intelligence (A-I)</dd>
+				<dt><dfn data-lt="screen reader|screen readers">screen reader</dfn></dt>
+				<dd><a>Assistive technology</a> that renders content as speech or Braille.</dd>
+				<dt><dfn>user agent</dfn></dt>
+				<dd>Any software that retrieves, renders and facilitates end user interaction with web content.</dd>
+			</dl>
+		</section>
+	</body>
+</html>
