@@ -3,7 +3,6 @@
 
 <head>
 <meta http-equiv=Content-Type content="text/html; charset=utf-8">
-<meta name=Generator content="Microsoft Word 15 (filtered)">
 <title>Overlay Capabilities Inventory, Accessibility at the Edge Community
 Group</title>
 <style>
@@ -19,25 +18,21 @@ Group</b></p>
 
 <p><b>Overlay Capabilities Inventory</b></p>
 
+<p>This document describes some functionalities that can be provided "at the edge",
+   and attempts to answer several questions about them.</p>
 
-<h1>Key</h1>
+<p>The questions are:</p>
 
-<p><b>Capability Title</b></p>
+<ul>
+<li>[2] Locating functionality in
+the stack to achieve maximum benefit: Source Code Perspective</li>
 
-<p><b>Capability Description</b></p>
+<li>Is this functionality duplicated elsewhere in the stack?</li>
 
+<li>What is the benefit of doing this at the edge?</li>
 
-<p><b>[2] Locating functionality in
-the stack to achieve maximum benefit: Source Code Perspective</b></p>
-
-<p><b>[3] Redundancy notes:
-duplicated functionality across the stack?</b></p>
-
-<p><b>[4] Potential benefits for
-performing this function at the edge (or in the overlay)</b></p>
-
-<p><b>[5] Related topics</b></p>
-
+<li>Related topics</li>
+</ul>
 
 <h1>Inventory</h1>
 
@@ -50,9 +45,11 @@ The end-user can turn on those enhancements that help them</p>
 code level, user-triggered interactions, rather than offering them in a
 JavaScript layer.</p>
 
-<p>[3] Many enhancements such as
-contrast are available on the operating system level.</p>
-
+<dl>
+<dt>Redundancy:</dt>
+<dd> Many enhancements such as
+contrast are available on the operating system level.</dd>
+</dl>
 <h2>Runs automatically, no user action needed</h2>
 
 <p>Overlay capabilities that run on
@@ -68,40 +65,46 @@ the overlay) to tailor a website's experience to the user's preferences.</p>
 
 <p>Algorithmic detection of
 violations of WCAG 2.x success critera. </p>
+<dl>
+<dt>Redundancy:</dt>
+<dd> In-browser scanners, online scanners
+perform detection. A large number of companies do this too for a fee.</dd>
 
-<p>[3] In-browser scanners, online scanners
-perform detection. A large number of companies do this too for a fee.</p>
-
-<p>[5] False positives, false
-negatives; certainty</p>
-
+<dt>Related Topics:</dt>
+<dd> False positives, false
+negatives; certainty</dd>
+</dl>
 <h2>Automated Remediation</h2>
 
 <p>Remediation of a violation of a
 WCAG 2.x success critera by programmatic means.</p>
+<dl>
+<dt>Redundancy:</dt>
+<dd> Remediating at source, by hand</dd>
 
-<p>[3] Remediating at source, by hand</p>
-
-<p>[5] False positives, false
-negatives</p>
-
+<dt>Related Topics:</dt>
+<dd>False positives, false
+negatives</dd>
+</dl>
 <h2>Notifications</h2>
 
 <p>Messages shown to the end-user to
 alert the user to an event, information or a state. </p>
-
-<p>[5] What is required to disclose
-to the user?</p>
-
+<dl>
+<dt>Related Topics:</dt>
+<dd>What is required to disclose
+to the user?</dd>
+</dl>
 <h2>Human in the loop on automated remediation suggestions</h2>
 
 <p>Overlay owner is asked to accept
 programmatic suggestions. This enables democratization of accessibility tasks
 and acceleration.</p>
-
-<p>[3] Not redundant: an innovation
-unique to overlays of this type.</p>
-
+<dl>
+<dt>Redundancy:</dt>
+<dd> Not redundant: an innovation
+unique to overlays of this type.</dd>
+</dl>
 <h2>Accessibility provider visibly displayed </h2>
 
 <p>Display to website users the name
@@ -111,11 +114,12 @@ statement.</p>
 
 <p>[2] The provider can be listed in
 the source text.</p>
-
-<p>[3] Not redundant: an innovation
+<dl>
+<dt>Redundancy:</dt>
+<dd> Not redundant: an innovation
 unique to overlays of this type. Sometimes (rarely) the accessibilty provider
-is mentioned in the accessibility statement or accessibility policy. </p>
-
+is mentioned in the accessibility statement or accessibility policy. </dd>
+</dl>
 <h2>Accessibility statement access</h2>
 
 <p>A link to the site's accessibility
@@ -123,56 +127,63 @@ statement</p>
 
 <p>[2] The link can be hosted on the
 source page.</p>
-
-<p>[3] The link in the footer of the
-site</p>
-
+<dl>
+<dt>Redundancy:</dt>
+<dd> The link in the footer of the
+site</dd>
+</dl>
 <h2>Accessibility issue reporting</h2>
 
 <p>A form, or email link, enabling
 end-users to report barriers to accessibility to the website owner</p>
+<dl>
+<dt>Redundancy:</dt>
+<dd> Contact us in the
+accessibility statement</dd>
 
-<p>[3] Contact us in the
-accessibility statement</p>
-
-<p>[5] Responsibility for responding.
-Requires that the company receiving the report has expertise to respond. </p>
-
+<dt>Related Topics:</dt>
+<dd> Responsibility for responding.
+Requires that the company receiving the report has expertise to respond. </dd>
+</dl>
 <h2>Profile enabling a bundle of user-triggered interactions/opt-ins (on a
 site)</h2>
 
 <p>Optional profiles that group
 interactive features together into bundles, making it easier to turn on groups
 of features, e.g. high contrast and larger text size.</p>
-
-<p>[3] Not redundant: an innovation
-unique to overlays of this type. </p>
-
+<dl>
+<dt>Redundancy:</dt>
+<dd> Not redundant: an innovation
+unique to overlays of this type. </dd>
+</dl>
 <h2>Accessibility editing, by site owner</h2>
 
 <p>An interface in the overlay,
 available to authorized users, enabling manual editing of code that affects
 accessibility, e.g. alt tags for images, or ARIA labels.</p>
-
-<p>[3] Not redundant: an innovation
+<dl>
+<dt>Redundancy:</dt>
+<dd> Not redundant: an innovation
 unique to overlays of this type. Provides an alternative to standard methods of
 coding the site, either via source code, web platform templates/CSS
-adjustments, etc.</p>
+adjustments, etc.</dd>
 
-<p>[5] This editing needs to be done
+<dt>Related Topics:</dt>
+<dd> This editing needs to be done
 by people with expertise. Can be a source of information for a subject matter
-expert.</p>
-
+expert.</dd>
+</dl>
 <h2>Accessibility editing, by 3rd party</h2>
 
 <p>A third party, via the overlay,
 codes the accessibility of the site.</p>
-
-<p>[3] Not redundant: an innovation
+<dl>
+<dt>Redundancy:</dt>
+<dd> Not redundant: an innovation
 unique to overlays of this type. Without an overlay, this could be an
 outsourced remediation team that has login authorization to the source code
-and/or admin of the CMS/Platform.</p>
-
+and/or admin of the CMS/Platform.</dd>
+</dl>
 <h2>Change Text Size</h2>
 
 <p>Increase or decrease font size, by
@@ -181,12 +192,14 @@ clicking an interactive widget.</p>
 <p>[2] Source code specifies text
 size as per the original target audience and design, but only for content
 coming from the source.</p>
-
-<p>[3] Text sizes are configurable in
+<dl>
+<dt>Redundancy:</dt>
+<dd> Text sizes are configurable in
 the operating system. Not clear if this propagates across all dynamically
-loaded content.</p>
+loaded content.</dd>
 
-<p>[4] Learning how to make such
+<dt>Benefit of being on the Edge:</dt>
+<dd> Learning how to make such
 changes in browser and/or operating system configurations is challenging for
 many, and particularly challenging for the communities that most need it.
 Offering overlay access raises awareness that such capabilities are present and
@@ -194,136 +207,150 @@ does not prevent users from learning how to configure it in other places.
 Overlays are site-specific, making such accomodations on the sites where they
 are requested. An overlay could propagate such preferences across sites,
 browsers, operating systems and/or devices, to manage the complete experience
-including injected and/or dynamic content.</p>
-
+including injected and/or dynamic content.</dd>
+</dl>
 <h2>Change Text Spacing</h2>
 
 <p>Modify text and line spacing for
 improved readability for dyslexic and visually impaired users. Offers three
 degrees of adjustments for a personalized and more accessible reading
 experience. ,</p>
-
-<p>[3] Defaults are configurable in
-the operating system.</p>
-
+<dl>
+<dt>Redundancy:</dt>
+<dd> Defaults are configurable in
+the operating system.</dd>
+</dl>
 <h2>Change Cursor Size</h2>
 
 <p>Increases the standard cursor size
 by 400% to ensure the pointer always remains in sight. Allows for faster and
 more accessible navigation through hyperlinks, tabs. and form elements.</p>
-
-<p>[3] Defaults are configurable in
-the operating system.</p>
-
+<dl>
+<dt>Redundancy:</dt>
+<dd> Defaults are configurable in
+the operating system.</dd>
+</dl>
 <h2>Change Link Highlights Visibility</h2>
 
 <p>Selecting the text or image that serves
 as a hyperlink and causing it to be displayed in a different, more visible way,
 to help identify the links on a page more easily. </p>
-
-<p>[3] Defaults are configurable in
-the browser.</p>
-
+<dl>
+<dt>Redundancy:</dt>
+<dd> Defaults are configurable in
+the browser.</dd>
+</dl>
 <h2>Pause Animations</h2>
 
 <p>The ability to stop animations or
 other moving elements on a web page from playing. </p>
-
-<p>[3] Some players offer a pause.
-Context menu or developer tools. </p>
-
+<dl>
+<dt>Redundancy:</dt>
+<dd> Some players offer a pause.
+Context menu or developer tools. </dd>
+</dl>
 <h2>Apply Light Contrast, Dark Contrast, Invert Colors, Color Desaturation</h2>
 
 <p>Color modifications that are useful
 to people with visual impairments. They modify the difference between the
 lightest and darkest parts of a web page, reverse colors, or reduce theior
 intensity.</p>
-
-<p>[3] Defaults are configurable in
-the operating system.</p>
-
+<dl>
+<dt>Redundancy:</dt>
+<dd> Defaults are configurable in
+the operating system.</dd>
+</dl>
 <h2>Tooltips</h2>
 
 <p>small pop-up window that appears
 on hover to display additional information about an element on the page,
 providing context or clarification.</p>
-
-<p>[3] Not redundant: an innovation
-unique to overlays of this type.</p>
-
+<dl>
+<dt>Redundancy:</dt>
+<dd> Not redundant: an innovation
+unique to overlays of this type.</dd>
+</dl>
 <h2>Reading Guide</h2>
 
 <p>A horizontal line that appears
 below text to help the reader keep their place as they read, follow along with
 the text and stay focused. </p>
-
-<p>[3] Not redundant: an innovation
+<dl>
+<dt>Redundancy:</dt>
+<dd> Not redundant: an innovation
 unique to overlays of this type. There may be browser extensions that provide
-this functionality.</p>
-
+this functionality.</dd>
+</dl>
 <h2>Accessible Fonts</h2>
 
 <p>Fonts selected for their
 legibilitiy, that are generally found to be easier to read, especially for
 people with low vision or reading difficulties.</p>
-
-<p>[3] Defaults are configurable in
-the operating system.</p>
-
+<dl>
+<dt>Redundancy:</dt>
+<dd> Defaults are configurable in
+the operating system.</dd>
+</dl>
 <h2>Dyslexia Friendly Font </h2>
 
 <p>Fonts considered to be more
 dyslexia-friendly as they have more distinctive symbols that avoid confusion,
 increased baselines and thinner tops, and a larger x-height. </p>
-
-<p>[3] Fonts can be configured in the
-operating system.</p>
-
+<dl>
+<dt>Redundancy:</dt>
+<dd> Fonts can be configured in the
+operating system.</dd>
+</dl>
 <h2>Page Structure Show Headings, Links, Landmarks</h2>
 
 <p>ALternative navigation methods
 that are commonly used by screen readers, made available to the sighted user.
 These include the ability to browse a page by its headings, which can be
 helpful for understanding the overall structure of the page; links; buttons. </p>
-
-<p>[3] Available in screen readers</p>
-
+<dl>
+<dt>Redundancy:</dt>
+<dd> Available in screen readers</dd>
+</dl>
 <h2>Reset All</h2>
 
 <p>One button click to reset any user
 triggered enhancement and restore the page to its default state.</p>
-
-<p>[3] No need.</p>
-
+<dl>
+<dt>Redundancy:</dt>
+<dd> No need.</dd>
+</dl>
 <h2>Screen Reader</h2>
 
 <p>On page screen reader</p>
-
-<p>[3] Screen reader installed at the
+<dl>
+<dt>Redundancy:</dt>
+<dd> Screen reader installed at the
 operating system level and used as a standalone application. Also (less common)
-screen readers in an application such as a browser.</p>
-
+screen readers in an application such as a browser.</dd>
+</dl>
 <h2>Keyboard Navigation</h2>
 
 <p>Enhance visual indicators that
 support keyboard navigation such as underlines or color changes; optionally
 provide other assistance such as mapping interactive elements to keyboard
 shortcuts. </p>
-
-<p>[3] Not redundant: an innovation
+<dl>
+<dt>Redundancy:</dt>
+<dd> Not redundant: an innovation
 unique to overlays of this type. Some aspects can be enhanced in the operating
-system or browser configuration, such as focus indication.</p>
-
+system or browser configuration, such as focus indication.</dd>
+</dl>
 <h2>Image Alts</h2>
 
 <p>Short piece of text associated with
 an image on a web page. It is intended to provide a description of the image
 for users who cannot see it, such as those using screen readers or text-only
 browsers.</p>
-
-<p>[3] Some computer vision image
-identitification is included in some browser extensions.</p>
-
+<dl>
+<dt>Redundancy:</dt>
+<dd> Some computer vision image
+identitification is included in some browser extensions.</dd>
+</dl>
 <h2>Form Labels</h2>
 
 <p>A label associated with each form
@@ -331,28 +358,31 @@ field accurately describing its purpose. The label should be consistent with
 the logical structure of the form overall.</p>
 
 <p>[2] Code with proper form labels.</p>
+<dl>
+<dt>Redundancy:</dt>
+<dd> Not redundant: an innovation
+unique to overlays of this type.</dd>
 
-<p>[3] Not redundant: an innovation
-unique to overlays of this type.</p>
-
-<p>[4] Apparently, after twenty years
+<dt>Benefit of being on the Edge:</dt>
+<dd> Apparently, after twenty years
 of consistent effort at changing how we train designers and developers of
 forms, only a subset are doing it right today, but we still need the labels.
 Having an overlay provide them escalates the need, hopefully attracts dev
 attention and gets the resource allocated. Certainly, an overlay does not
 prevent source from being fixed, when it can be fixed (e.g. there are some
-legacy codebases where fixing in the edge is preferred).</p>
-
+legacy codebases where fixing in the edge is preferred).</dd>
+</dl>
 <h2>Dictionary</h2>
 
 <p>Provide definitions of words or
 phrases that may be unfamiliar to some users; provide pronunciation guidance;
 provide synonyms which can help users with cognitive disabilities better
 comprehend the content.</p>
-
-<p>[3] Browsers and operating systems
-offer related features, generally on &quot;right-click&quot;. </p>
-
+<dl>
+<dt>Redundancy:</dt>
+<dd> Browsers and operating systems
+offer related features, generally on &quot;right-click&quot;. </dd>
+</dl>
 <h2>Form Validation </h2>
 
 <p>Ensure that screen reader users
@@ -360,20 +390,22 @@ and people with disabilities receive clear feedback on the status of the form
 along with concise error messages. This includes the colors used, the proximity
 to the form field, and the time-sensitive nature of the screen reader
 announcement. </p>
-
-<p>[3] Not redundant: an innovation
-unique to overlays of this type.</p>
-
+<dl>
+<dt>Redundancy:</dt>
+<dd> Not redundant: an innovation
+unique to overlays of this type.</dd>
+</dl>
 <h2>Interactive Elements </h2>
 
 <p>Ensure there are concise
 instructions and labels that are clear to sighted, low vision and non sighted
 users, and that the elements can be controlled with keyboard navigation.
 Provide such feedback on the status of the element and any changes that occur. </p>
-
-<p>[3] Not redundant: an innovation unique
-to overlays of this type.</p>
-
+<dl>
+<dt>Redundancy:</dt>
+<dd> Not redundant: an innovation unique
+to overlays of this type.</dd>
+</dl>
 <h2>Autoplay Videos </h2>
 
 <p>Provide ability to pause, mute
@@ -381,11 +413,13 @@ and/or stop the video; make these controls keyboard navigation accessible.</p>
 
 <p>[2] Videos should be made
 available with these capabilities, as they are built into HTML 5.</p>
+<dl>
+<dt>Redundancy:</dt>
+<dd> Not redundant: an innovation
+unique to overlays of this type. Some sites offer the option. </dd>
 
-<p>[3] Not redundant: an innovation
-unique to overlays of this type. Some sites offer the option. </p>
-
-<p>[4] Apparently, after years of
+<dt>Benefit of being on the Edge:</dt>
+<dd> Apparently, after years of
 consistent effort at changing how we train designers and developers of websites
 that host video, only a subset are doing it right today, and we still need
 these controls. Having an overlay deliver these capabilities is not a problem
@@ -393,37 +427,40 @@ for end users, it is more service for users. The overlay may escalate the need,
 hopefully attracting dev attention and encourage better source development in
 the future. Certainly, an overlay does not prevent source from being fixed,
 when it can be fixed (e.g. there are some legacy codebases where fixing in the
-edge is preferred).</p>
-
+edge is preferred).</dd>
+</dl>
 <h2>External Link Targets</h2>
 
 <p>Assure the link is announced
 correctly as a link, and inform users if it opens in a new tab or window. In
 addition, assess broken links: verify that the link resolves, and mark broken
 links as broken. </p>
-
-<p>[3] Not redundant: an innovation
-unique to overlays of this type.</p>
-
+<dl>
+<dt>Redundancy:</dt>
+<dd> Not redundant: an innovation
+unique to overlays of this type.</dd>
+</dl>
 <h2>Ambiguous Links</h2>
 
 <p>Provide descriptive and meaningful
 link text that accurately reflects the purpose or destination of the link,
 particularly needed for link text such as &quot;click here&quot; or
 &quot;more.&quot; </p>
-
-<p>[3] Not redundant: an innovation
-unique to overlays of this type.</p>
-
+<dl>
+<dt>Redundancy:</dt>
+<dd> Not redundant: an innovation
+unique to overlays of this type.</dd>
+</dl>
 <h2>Broken Links</h2>
 
 <p>Assess if the link resolves, and
 mark broken links as broken.</p>
-
-<p>[3] Not redundant: an innovation
+<dl>
+<dt>Redundancy:</dt>
+<dd> Not redundant: an innovation
 unique to overlays of this type. There are some browser extensions that perform
-some of this functionality.</p>
-
+some of this functionality.</dd>
+</dl>
 <h2>Video Captioning</h2>
 
 <p>Displaying in text along with
