@@ -20,32 +20,31 @@ Group</title>
 <p>This document describes some capabilities that can be provided by overlays "at the edge", and attempts to answer several questions about them. The questions are:</p>
 
 <ul>
-<li>Source: What is the role of the author (or source code developer) in providing this capability and ensuring that it is accessible.</li>
+<li>Source: What is the role of the author (or content source code developer) in providing this capability and ensuring that it is accessible.</li>
 
-<li>Tradeoffs When this capability is enabled on the edge, does it potentially duplicate functionality elsewhere in the stack? In particular, consider all the possibilities near the edge namely the CDN, operating system, user-agent, browser extension, assistive technology, and/or javascript overlay. If so, can this redundancy be avoided?</li>
+<li>Tradeoffs When this capability is enabled on the edge, does it potentially duplicate functionality elsewhere in the stack? In particular, we consider all the possibilities near the edge namely the CDN, operating system, user-agent, browser extension, assistive technology, and/or javascript overlay. If so, can (and should) this redundancy be avoided?</li>
 
-<li>Benefit: What is the potential benefit of doing this at the edge?</li>
+<li>Benefit: What is the potential benefit of performing this capability at the edge?</li>
 
 <li>Related topics</li>
 </ul>
-
+<p><strong>EDITOR&apos;S NOTE</strong><br /> The <q>Related Items</q> list item is a placeholder to remind us that this document is in active development. Suggestions welcome!</p>
 <h1>Capabilities Inventory</h1>
 
 <h2>User-triggered interactions/opt-ins</h2>
 
-<p>User opt-ins via interactive personalization. The end-user can access a list of available enhancements. The end-user can enable those enhancements that they require. </p>
+<p>User opt-ins via interactive personalization menus: The end-user can access a list of available enhancements and enable those they require. </p>
 
 <dl>
 <dt>Source</dt>
-<dd>Users tend to require the same types of accomodations across all sites and all content sources. Therefore, facilitating this capability in the source is the least useful place to locate it. </dd>
+<dd>Users tend to require the same types of accomodations across all sites and all content sources. Therefore, facilitating this capability in the source is likely the least useful place to locate it, because it requires the user to select the same enhancements time and again. </dd>
 
 <dt>Tradeoffs</dt>
-<dd>Many of the capabilities made available by user-triggered opt-ins are found in multiple places at the edge. For example, contrast adjustment is found in the display, operating system, user-agent (dark mode/light mode), extensions and javascript overlays. This redundancy can lead to confusion. The proliferation has occured because many users are knowledgeable about their operating system (to take one example) and find it difficult to locate such features as operating systems update. On the other hand, putting the accomodation most proximate to the user offers the highest likelihood of being most satisfactory when located and invoked without conflicts, and the best opportunity for easing the burden across multiple devices.</dd>
+<dd>Many of the capabilities made available by user-triggered opt-ins are often also found in multiple places at the edge. For example, contrast adjustment is generally found  in operating system display settings, in browser and app user-agents (e.g. dark mode/light mode), and in browser extensions, and in javascripted (CDN hosted) overlays. This redundancy can lead to confusion. This confusion may be further exaserbated because certain settings the user finds helpful may be available only in one of these locations, and not in all of them. Furthermore, users are frequently not particularly knowledgeable about their operating system settings menus, especially as these tend to move with each OS revision (to take one example). This makes it difficult to locate these features, especially when we recognize that once satisfactorally configured they are generally not reset (meaning that the user doesn't need to revisit that menu location and soon forgets where it is). On the other hand, locating the accomodation consistently proximate to the user offers the highest likelihood of maximal benefit provided  the accomodation  is easily identified and invoked without conflicts. This also provides the best opportunity for easing the burden of invoking the same accomodation across a user&apos;s multiple devices.</dd>
 
 <dt>Benefit</dt>
-<dd>Users can select and optimally tune the types of accomodations that they require. Any device on the edge may also have knowledge of other devices on the edge, that may need the same adjustments, and the edge could propagate these settings to those other devices.</dd>
+<dd>Users can select and optimally tune the types of accomodations that they require. Any device on the edge may also have knowledge of other devices on the edge, that may need the same adjustments, and the edge could propagate these settings to those other devices. MacOS Ventura (MacOS 13.2) is already doing this for wifi passwords when an IOS device configured for the same network is proximate.</dd>
 </dl>
-
 
 <h2>Automated interactions, no user action needed</h2>
 
