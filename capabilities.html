@@ -40,7 +40,7 @@ Group</title>
 <dd>Users tend to require the same types of accomodations across all sites and all content sources. Therefore, facilitating this capability in the source is likely the least useful place to locate it, because it requires the user to select the same enhancements time and again. </dd>
 
 <dt>Tradeoffs</dt>
-<dd>Many of the capabilities made available by user-triggered opt-ins are often also found in multiple places at the edge. For example, contrast adjustment is generally found  in operating system display settings, in browser and app user-agents (e.g. dark mode/light mode), and in browser extensions, and in javascripted (CDN hosted) overlays. This redundancy can lead to confusion. This confusion may be further exaserbated because certain settings the user finds helpful may be available only in one of these locations, and not in all of them. Furthermore, users are frequently not particularly knowledgeable about their operating system settings menus, especially as these tend to move with each OS revision (to take one example). This makes it difficult to locate these features, especially when we recognize that once satisfactorally configured they are generally not reset (meaning that the user doesn't need to revisit that menu location and soon forgets where it is). On the other hand, locating the accomodation consistently proximate to the user offers the highest likelihood of maximal benefit provided  the accomodation  is easily identified and invoked without conflicts. This also provides the best opportunity for easing the burden of invoking the same accomodation across a user&apos;s multiple devices.</dd>
+<dd>Many of the capabilities made available by user-triggered opt-ins are often also found in multiple places at the edge. For example, contrast adjustment is generally found  in operating system display settings, in browser and app user-agents (e.g. dark mode/light mode), and in browser extensions, and in javascripted (CDN hosted) overlays. Such redundancy can easily lead to confusion. This confusion may be further exaserbated because certain settings the user finds helpful may be available only in one of these locations, and not in all of them. Furthermore, users are frequently not particularly knowledgeable about their operating system settings menus, especially as these tend to move with each OS revision (to take one example). This can make it difficult to locate these features, especially when we recognize that once satisfactorally configured they are generally not reset (meaning that the user doesn't need to revisit that menu location and soon forgets where it is). On the other hand, locating the accomodation consistently proximate to the user offers the highest likelihood of maximal benefit provided  the accomodation  is easily identified and invoked without conflicts. This also provides the best opportunity for easing the burden of invoking the same accomodation across a user&apos;s multiple devices.</dd>
 
 <dt>Benefit</dt>
 <dd>Users can select and optimally tune the types of accomodations that they require. Any device on the edge may also have knowledge of other devices on the edge, that may need the same adjustments, and the edge could propagate these settings to those other devices. MacOS Ventura (MacOS 13.2) is already doing this for wifi passwords when an IOS device configured for the same network is proximate.</dd>
@@ -53,15 +53,14 @@ Group</title>
 
 <dl>
 <dt>Source</dt>
-<dd>By definition, this cannot be done by the author.
-	<p><strong>EDITOR&apos;S NOTE</strong><br /> Need to reconsider. Is this true? Or just more difficult to do?</p>
+<dd>Content has long sought to taylor behavior based on what capabilities could be <q>sniffed</q> from the user&apos;s operating environment. What browser is in use? Is a screen reader in use? Indeed, Google's automated Recaptcha 3 is deeply dependent on just such data gathering.
 </dd>
 
 <dt>Tradeoffs</dt>
-<dd>Any automated process should give notice that it is running and offer an opt-out, lest users revolt and sponsor resolutions of condemnation in their advocacy organizations. The underlying accessibility principle is <q>Nothing about us without us.</q></dd>
+<dd>Any automated process should give notice that it is running and offer an opt-out, lest users revolt and sponsor resolutions of condemnation in their advocacy organizations. The underlying accessibility principle is <q>Nothing about us without us.</q> Most glaringly, there can be little hope of preserving privacy when content providers are <q>snigginf</q> user data, and monetizing that data. Persons with disabilities tend to be keen on preserving privacy because of perceived and actual discriminatory consequences.</dd>
 
 <dt>Benefit</dt>
-<dd>That capabilities users would desire in general might operate automatically and seemlessly is an accepted technological goal. The error is not in the creation of the automated process, but in leaving the user out of the decision loop.</dd>
+<dd>That capabilities users would desire in general might operate automatically and seemlessly is an accepted technological goal. The error is not in the creation of the automated process, but in leaving the user out of the decision loop. Also, technologically mediated privacy preservation is only feasible in edge technologies, though it can be subverted even there.</dd>
 </dl>
 
 <h2>Portable cross-site profile expressing accessibility-oriented preferences</h2>
@@ -74,13 +73,13 @@ Group</title>
 
 <dt>Tradeoffs</dt>
 <dd>
-While generally true and clearly valuable to users, this capability should not be taken too literally. One obvious caveat is screen size and consequent decisions over preferred fonts and backgrounds. Another nuance is the likely desire of a screen reader user to operate sometimes with TTS , but other times with braille (or both braille and TTS).
+While generally true and clearly valuable to users, this capability nevertheless requires nuanced implementation. One obvious caveat is screen size and consequent decisions over preferred fonts and backgrounds. Another nuance is the likely desire of a screen reader user to operate sometimes with TTS , but other times with braille (or both braille and TTS).
 </dd>
 
 
 
 <dt>Benefit</dt>
-<dd></dd>
+<dd>Configure once, deploy everywhere.</dd>
 </dl>
 
 <h2>Automated Detection of WCAG Violations</h2>
