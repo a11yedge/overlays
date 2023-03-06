@@ -29,6 +29,7 @@ Group</title>
 <li>Related topics</li>
 </ul>
 <p><strong>EDITOR&apos;S NOTE</strong><br /> The <q>Related Items</q> list item is a placeholder to remind us that this document is in active development. Suggestions welcome!</p>
+
 <h1>Capabilities Inventory</h1>
 
 <h2>User-triggered interactions/opt-ins</h2>
@@ -73,38 +74,58 @@ them highly desirous to preserve their privacy because of perceived and actual
 experience of discrimination over many years.</dd>
 
 <dt>Benefit</dt>
-<dd>Users do indeed expect their technologies will  operate automatically and seemlessly to provide an accessible and functional experience. This is an accepted technological expectation. Content providers do not err in attempting to meet this expectation. The error arises from leaving the user out of the decision loop. Also, technologically mediated privacy preservation is only feasible in edge technologies, though it can be subverted even there.</dd>
+<dd>Users do indeed expect their technologies will operate automatically and seemlessly to provide an accessible and functional experience. This is an accepted technological expectation. Content providers do not err in attempting to meet this expectation. The error arises from leaving the user out of the decision loop. Also, technologically mediated privacy preservation is only feasible in edge technologies, though it can be subverted even there.</dd>
 </dl>
 
 <h2>Portable cross-site profile expressing accessibility-oriented preferences</h2>
 
-<p>Users now frequently use several devices. Furthermore, users tend to have the same or very similar accessibility requirements regardless of the device they may be using in the moment. It is therefore a goal in web accomodations to support the user in configuring once and having their configured preference propogate across all their devices. This propagation should function across all vendors and operating environments.</p>
+<p>Users now frequently use several devices. Furthermore, users tend to have the same or very similar accessibility requirements regardless of the device they may be using in the moment. 
+	It is therefore an emerging goal in web accomodations to support the user in configuring once and having their configured preference propogate across all their devices. 
+	This propagation should function across all vendors and operating environments.</p>
 
 <dl>
 <dt>Source</dt>
-<dd>While technically feasible in source, this is not being done by content source, and we are not aware of any proposals to add such functionality in content source&mdasy;likely for a multiplicity of reasons.</dd>
+<dd>While technically feasible in source, this is not being done by content source today, and we are not aware of any proposals to add such functionality in content source&mdash;likely for a multiplicity of reasons.
+	People, regardless of ability or disability, may often want to withhold this information from a source provider, and would certainly not want it to propagate to 
+	source providers outside of their knowledge or control.</dd>
 
 <dt>Tradeoffs</dt>
 <dd>
-	A privacy-preserving, cross-platform U-I configuring  capability is now a <a href="https://www.w3.org/2017/vc/WG/Meetings/Minutes/2022-09-15-vcwg#section8">long-term goal in the W3C Accessible Platform Architectures (APA) Working Group.</a> Such a capability has long been desired and is arguably now more achievable than ever before. It would  clearly be valuable to users. It will nevertheless requires nuanced implementation, e.g.  screen size and consequent decisions over preferred fonts, spacing, and contrasts  will likely vary by screen size and environmental conditions. Another example nuance consideration is the likely desire of a screen reader user to operate sometimes with TTS , but other times with braille (or both braille and TTS).
+	A privacy-preserving, cross-platform U-I configuring capability is now a <a href="https://www.w3.org/2017/vc/WG/Meetings/Minutes/2022-09-15-vcwg#section8">long-term goal in the W3C Accessible Platform Architectures (APA) Working Group.</a> 
+	Such a capability has long been desired and is arguably now more achievable than ever before. 
+	It would  clearly be valuable to users. 
+	For example, blind users and people on slow internet connections will benefit from setting their browsers to not download images. 
+	It will nevertheless require nuanced implementation, e.g.  screen size and consequent decisions over preferred fonts, spacing, and contrasts  will likely vary by screen size and environmental conditions. 
+	Another example of a nuanced consideration is the likely desire of a screen reader user to operate sometimes with TTS, but other times with braille (or both braille and TTS).
 </dd>
 
 <dt>Benefit</dt>
-<dd>Configure once, deploy everywhere.</dd>
+<dd>Configure once and deploy everywhere, with the setting propagating to other contexts.</dd>
 </dl>
 
 <h2>Automated Detection of WCAG Violations</h2>
 
-<p>Algorithmic detection of
-violations of WCAG 2.x success critera is considered here as a vector for providing the user a more conformant experience. There is, of course, the other application of where violation detection serves as a step in a source remediation process. We address the former here..</p>
+<p>Algorithmic detection of violations of WCAG 2.x success critera is considered here as a vector for providing the user a more conformant experience. 
+	Large, complex and highly dynamic source sites are literally unable to reproduce every user experience permutation in their test beds. Automated detection and 
+	reporting can bridge this gap. 
+	There is, of course, the other application, where violation detection serves as a step in a source remediation process. We address the former here..</p>
 <dl>
 <dt>Source</dt>
 <dd>
-If source got this right (as WCAG 2.x seems to expect), we wouldn't have a need for this document.
+If source got this right (as WCAG 2.x seems to expect), we wouldn't have a need for this capability.
 </dd>
 <dt>Tradeoffs</dt>
-<dd> In-browser scanners, online scanners
-are used to perform detection. This is the business model for many companies. False positives, false negatives; certainty and confidence are well-known factors affecting efficacy. However, the approach provides clear benefits especially in real-time applications (such as RTC). Immediacy matters. ASR captions may not provide the desired quality, but the alternative may too often be no captions whatsoever. Similarly missing image descriptions generated by A-I may prove more helpful to the user coping with a substandard page than no alternative text at all. It is unfortunate when such violations remain unremediated in source content, but sometimes this can&apos;t be helped. Not only does the continued presence of unremediated content provide user substandard access, it also does not provide A-I engines corrective feedback that could train them to do better in the future.</dd>
+<dd> In-browser scanners and online scanners are used to detect WCAG violations. 
+	This is the business model for many companies. 
+	False positives, false negatives, certainty and confidence scores are well-known factors affecting the success and usefullness of this approach. 
+	It is unfortunate when such violations remain unremediated in source content, but sometimes this can&apos;t be helped. 
+	An indication of violations at the edge, however rough, is better than none.
+
+	<p><strong>EDITOR&apos;S NOTE</strong><br /> This "DD" needs more work.</p>
+	However, the approach provides clear benefits especially in real-time applications (such as RTC). 
+	Immediacy matters. ASR captions may not provide the desired quality, but the alternative may too often be no captions whatsoever. 
+	Similarly missing image descriptions generated by A-I may prove more helpful to the user coping with a substandard page than no alternative text at all. 
+	Not only does the continued presence of unremediated content provide user substandard access, it also does not provide A-I engines corrective feedback that could train them to do better in future.</dd>
 
 <dt>Benefit</dt>
 <dd>Something is most often better than nothing, especially in the moment. Pages whose content remains unremediated however, can tend to encourage users to seek alternative source providers. There's also an unrealized opportunity for crowd-sourced correctives to help train smarter A-I generated output, though burden-shifting does encumber this potential use.</dd>
@@ -118,12 +139,17 @@ are used to perform detection. This is the business model for many companies. Fa
 alert them to an event, some specific datapoint, or to some state. </p>
 <dl>
 <dt>Source</dt>
-<dd>It seems unlikely source could fully take on this responsibility. On the other hand it seems equally unlikely that edge technology alone can fully meet this need effectively without API-based data interchange with source content.
+<dd>It seems unlikely source could fully take on this responsibility. 
+On the other hand it seems equally unlikely that edge technology alone can fully meet this need effectively without API-based data interchange with source content.
+	There is particularly cogent needs in <q>augumented reality</q> which are potentially very exciting.
 </dd>
 <dt>Tradeoffs</dt>
-<dd>What a user may want or need to know in any given situation or moment is a complex calculation at best. It's far too easy to overdo notifications, though failing to notify judiciously and appropriately would constitute a major technological opportunity missed. We need better models and privacy-preserving context awareness to realize all the benefits conceivable in this application of automated <q>augumented reality</q> opportunities.</dd>
+<dd>What a user may want or need to know in any given situation or moment is a complex calculation at best. 
+	It's far too easy to overdo notifications, though failing to notify judiciously and appropriately would constitute a major technological opportunity missed. 
+	We need better models and privacy-preserving context awareness to realize all the benefits conceivable in this application of automated opportunities.</dd>
 <dt>Benefit</dt>
-<dd>The right information at just the right time can serve as a tremendous quality of life enhancement.
+<dd>Controlling the firehose of notifications is best filtered and managed at the edge.
+	The right information at just the right time can serve as a tremendous quality of life enhancement.
 </dd>
 </dl>
 
