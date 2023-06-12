@@ -45,7 +45,8 @@ var respecConfig = {
 		}
 ],
 	
-	authors:		[
+	authors:		
+	[
 	// authors, add as many as you like.
 	// This is optional, uncomment if you have authors as well as editors.
 	// only "name" is required. Same format as editors.
